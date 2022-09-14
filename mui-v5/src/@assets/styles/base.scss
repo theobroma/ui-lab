@@ -1,0 +1,17 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root .HolyGrail {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.HolyGrail-content {
+  flex: 1;
+}
