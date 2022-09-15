@@ -1,7 +1,9 @@
+import DropdownShareButton from '../../@components/DropdownShareButton/DropdownShareButton';
+
 const BasicView = () => {
   return (
     <div>
-      <span>basic</span>
+      <DropdownShareButton />
     </div>
   );
 };
