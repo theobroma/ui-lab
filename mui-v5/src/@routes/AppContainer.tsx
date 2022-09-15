@@ -3,8 +3,9 @@ import pMinDelay from 'p-min-delay';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import LoadingPage from '../@components/UI/LoadingPage';
+import BasicView from '../@views/PopupStateView/BasicView';
 // import MainView from '../@views/MainView';
-import ResolverLayout from '../@views/ResolverView/ResolverLayout';
+import PopupStateLayout from '../@views/PopupStateView/PopupStateLayout';
 
 import { AppLayout } from './AppLayout';
 
@@ -22,8 +23,8 @@ const AppContainer = () => {
           <Route path="/" element={<AppLayout />}>
             <Route index element={<MainView />} />
             {/* resolvers */}
-            <Route path="resolvers" element={<ResolverLayout />}>
-              {/* <Route path="basic" element={<BasicExample />} /> */}
+            <Route path="popup-state" element={<PopupStateLayout />}>
+              <Route path="basic" element={<BasicView />} />
               {/* <Route path="yup" element={<YupBasicExample />} /> */}
               {/* <Route path="zod" element={<ZodBasicExample />} /> */}
               <Route index element={<div>Click any tab.</div>} />

@@ -4,7 +4,7 @@ import { Container, Grid } from '@mui/material';
 
 import MediaTabs from './MediaTabs';
 
-const ResolverLayout = () => {
+const PopupStateLayout = () => {
   return (
     <Container maxWidth="lg">
       <Grid container spacing={3} style={{ padding: 3 }}>
@@ -27,4 +27,4 @@ const ResolverLayout = () => {
   );
 };
 
-export default ResolverLayout;
+export default PopupStateLayout;

@@ -49,22 +49,22 @@ const NestedList = () => {
         <List component="div" disablePadding>
           <ListItemLink
             sx={{ pl: 4 }}
-            to="/resolvers/basic"
+            to="/popup-state/basic"
             primary="Basic"
             icon={<AutoGraphIcon />}
           />
-          <ListItemLink
+          {/* <ListItemLink
             sx={{ pl: 4 }}
-            to="/resolvers/yup"
+            to="/popup-state/yup"
             primary="Yup"
             icon={<AutoGraphIcon />}
-          />
-          <ListItemLink
+          /> */}
+          {/* <ListItemLink
             sx={{ pl: 4 }}
-            to="/resolvers/zod"
+            to="/popup-state/zod"
             primary="Zod"
             icon={<AutoGraphIcon />}
-          />
+          /> */}
         </List>
       </Collapse>
       {/* /Resolvers */}
