@@ -42,7 +42,7 @@ const PersistentDrawerLeft = ({ children }: { children?: React.ReactNode }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            RHF-MUI-V5
+            UI-Lab MUI-V5
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           {/* Theme Menu */}
