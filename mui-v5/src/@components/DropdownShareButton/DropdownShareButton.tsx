@@ -1,6 +1,7 @@
 import React from 'react';
 import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
 import { FaRegShareSquare } from 'react-icons/fa';
+import { makeStyles } from 'tss-react/mui';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkIcon from '@mui/icons-material/Link';
@@ -14,27 +15,12 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  makeStyles,
+  //   makeStyles,
   Paper,
   Popper,
 } from '@mui/material';
 
-// import Button from '@material-ui/core/Button';
-// import Fade from '@material-ui/core/Fade';
-// import List from '@material-ui/core/List';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import Paper from '@material-ui/core/Paper';
-// import Popper from '@material-ui/core/Popper';
-// import { makeStyles } from '@material-ui/core/styles';
-// import { alpha } from '@material-ui/core/styles/colorManipulator';
-// import FacebookIcon from '@material-ui/icons/Facebook';
-// import LinkIcon from '@material-ui/icons/Link';
-// import RedditIcon from '@material-ui/icons/Reddit';
-// import TwitterIcon from '@material-ui/icons/Twitter';
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme, _params, classes) => ({
   typography: {
     padding: theme.spacing(2),
   },
@@ -49,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const DropdownShareButton = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const handleShare = (e: any) => {
     e.preventDefault();

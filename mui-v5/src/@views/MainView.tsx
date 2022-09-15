@@ -1,6 +1,7 @@
 import { Box, Grid } from '@mui/material';
 
-import logo from '../@assets/images/rhf-mui.png';
+// import logo from '../@assets/images/rhf-mui.png';
+import DropdownShareButton from '../@components/DropdownShareButton/DropdownShareButton';
 
 const MainView = () => {
   return (
@@ -15,7 +16,9 @@ const MainView = () => {
             justifyContent: 'center',
           }}
         >
-          <img src={logo} alt="Logo" />
+          {/* <img src={logo} alt="Logo" /> */}
+          {/*  */}
+          <DropdownShareButton />
         </Box>
       </Grid>
       <Grid item xs={2}>
