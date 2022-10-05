@@ -1,8 +1,18 @@
+import ReactPlayer from 'react-player';
+
+// import screenfull from 'screenfull';
+
 const AppPlayer = () => {
   return (
-    <header className="header__section">
-      <p className="header__text">Build a Video Player - Tutorial</p>
-    </header>
+    <div className="playerDiv">
+      <ReactPlayer
+        width="100%"
+        height="100%"
+        url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+        playing
+        muted
+      />
+    </div>
   );
 };
 
