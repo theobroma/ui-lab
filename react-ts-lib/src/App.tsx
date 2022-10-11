@@ -1,4 +1,5 @@
 import { Button, BUTTON_VARIANTS } from "./lib";
+// import { Button, BUTTON_VARIANTS } from "@theobroma222/react-ts-lib";
 
 function App() {
     // обработчик нажатия кнопки
