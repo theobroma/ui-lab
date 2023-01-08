@@ -1,7 +1,9 @@
 import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
+import { useSnackbar } from 'notistack';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { makeStyles } from 'tss-react/mui';
 
+import { ClickAwayListener } from '@mui/base';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkIcon from '@mui/icons-material/Link';
 import RedditIcon from '@mui/icons-material/Reddit';
@@ -34,6 +36,7 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
 
 export const DropdownShareButton = () => {
   const { classes } = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleShare = (e: any) => {
     e.preventDefault();
@@ -55,6 +58,9 @@ export const DropdownShareButton = () => {
         break;
       case 'copy':
         navigator.clipboard.writeText(ahref);
+        enqueueSnackbar('Link copied to clipboard', {
+          variant: 'success',
+        });
         break;
       default:
         break;
@@ -68,53 +74,55 @@ export const DropdownShareButton = () => {
   return (
     <PopupState variant="popper" popupId="demo-popup-popper">
       {(popupState) => (
-        <div>
-          <Button
-            className={classes.btn}
-            color="inherit"
-            {...bindToggle(popupState)}
-          >
-            <FaRegShareSquare />
-            Share Article
-          </Button>
-          <Popper {...bindPopper(popupState)} transition>
-            {({ TransitionProps }) => (
-              <Fade {...TransitionProps} timeout={350}>
-                <Paper>
-                  <List
-                    dense
-                    // className={classes.paper}
-                  >
-                    <ListItem button id="facebook" onClick={handleShare}>
-                      <ListItemIcon>
-                        <FacebookIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Facebook" />
-                    </ListItem>
-                    <ListItem button id="twitter" onClick={handleShare}>
-                      <ListItemIcon>
-                        <TwitterIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Twitter" />
-                    </ListItem>
-                    <ListItem button id="reddit" onClick={handleShare}>
-                      <ListItemIcon>
-                        <RedditIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Reddit" />
-                    </ListItem>
-                    <ListItem button id="copy" onClick={handleShare}>
-                      <ListItemIcon>
-                        <LinkIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Copy Link" />
-                    </ListItem>
-                  </List>
-                </Paper>
-              </Fade>
-            )}
-          </Popper>
-        </div>
+        <ClickAwayListener onClickAway={popupState.close}>
+          <div>
+            <Button
+              className={classes.btn}
+              color="inherit"
+              {...bindToggle(popupState)}
+            >
+              <FaRegShareSquare />
+              Share Article
+            </Button>
+            <Popper {...bindPopper(popupState)} transition>
+              {({ TransitionProps }) => (
+                <Fade {...TransitionProps} timeout={350}>
+                  <Paper>
+                    <List
+                      dense
+                      // className={classes.paper}
+                    >
+                      <ListItem button id="facebook" onClick={handleShare}>
+                        <ListItemIcon>
+                          <FacebookIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Facebook" />
+                      </ListItem>
+                      <ListItem button id="twitter" onClick={handleShare}>
+                        <ListItemIcon>
+                          <TwitterIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Twitter" />
+                      </ListItem>
+                      <ListItem button id="reddit" onClick={handleShare}>
+                        <ListItemIcon>
+                          <RedditIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Reddit" />
+                      </ListItem>
+                      <ListItem button id="copy" onClick={handleShare}>
+                        <ListItemIcon>
+                          <LinkIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Copy Link" />
+                      </ListItem>
+                    </List>
+                  </Paper>
+                </Fade>
+              )}
+            </Popper>
+          </div>
+        </ClickAwayListener>
       )}
     </PopupState>
   );
