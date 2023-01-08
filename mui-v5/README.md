@@ -1,41 +1,12 @@
-# PixaBay Image Finder
+# React & Material UI v5 sandbox
 
-##### React & Material UI v5 app to find images utilizing the PixaBay API
+## :fire: Built With
 
-Register your API Key at
-[https://pixabay.com/](https://pixabay.com/)
+This project was built using these technologies.
 
-## Quick Start
+- [React.js v18](https://reactjs.org/)
+- [Material UI v5](https://mui.com/)
 
-```bash
-# Install dependencies
-npm install
+## :information_source: Resources
 
-# Serve on localhost:3000
-npm start
-
-# Build for production
-npm run build
-
-# Format with prettier
-npm run format
-
-# Lint with eslint
-npm run lint
-```
-
-## Deploy to Netlify
-
-```bash
-# Generate a production build and deploy it
-
-  "scripts": {
-    ...
-    "predeploy": "npm run build",
-    "deploy": "netlify deploy -p"
-  },
-```
-
-### Status badge
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ccb49e04-51bb-4b52-8e99-dc97b866951d/deploy-status)](https://app.netlify.com/sites/gracious-snyder-3c3f42/deploys)
+- [How to Code a Social Share Button with Material UI](https://snappywebdesign.net/blog/how-to-code-a-social-share-button-with-material-ui/)

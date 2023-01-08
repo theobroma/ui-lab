@@ -1,10 +1,11 @@
 import { Container, Box } from '@mui/material';
 
-import { NestedList } from '@/components/AppBar/NestedList/NestedList';
+import { DropdownShareButton } from '@/components/DropdownShareButton/DropdownShareButton';
 
 const HomePage = () => (
   <Container maxWidth="lg">
     <Box>HomePage</Box>
+    <DropdownShareButton />
   </Container>
 );
 
